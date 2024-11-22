@@ -9,6 +9,9 @@ function App() {
         <Button>
           <HomeIcon />
         </Button>
+        <Button style={{color:'blue', backgroundClor: 'white'}}>
+          Styled Button
+        </Button>
       </header>
     </div>
   );
