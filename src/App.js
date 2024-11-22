@@ -1,6 +1,12 @@
 import { Button } from '@mui/material';
 import './App.css';
 import HomeIcon from '@mui/icons-material/Home';
+import styled from 'styled-components';
+
+const StyledButton = styled(Button)(({theme}) => ({
+  color: 'blue',
+  background: 'white'
+}))
 
 function App() {
   return (
@@ -12,6 +18,9 @@ function App() {
         <Button style={{color:'blue', backgroundClor: 'white'}}>
           Styled Button
         </Button>
+        <StyledButton> common Styled Button 1</StyledButton>
+        <StyledButton> common Styled Button 2</StyledButton>
+        <StyledButton> common Styled Button 3</StyledButton>
       </header>
     </div>
   );
