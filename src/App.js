@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import './App.css';
 import HomeIcon from '@mui/icons-material/Home';
 import styled from 'styled-components';
+import MyTable from './components/MyTable';
 
 const StyledButton = styled(Button)(({theme}) => ({
   color: 'blue',
@@ -21,6 +22,7 @@ function App() {
         <StyledButton> common Styled Button 1</StyledButton>
         <StyledButton> common Styled Button 2</StyledButton>
         <StyledButton> common Styled Button 3</StyledButton>
+        <MyTable />
       </header>
     </div>
   );
