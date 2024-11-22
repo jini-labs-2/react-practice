@@ -23,25 +23,27 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function MyGrid() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid size={4}>
-          <Item> ID </Item>
-        </Grid>
-        <Grid size={8}>
-          <Item> Name </Item>
-        </Grid>
-        {items && items.map((item) => (
-          <>
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
           <Grid size={4}>
-            <Item>{item.id}</Item>
+            <Item> ID </Item>
           </Grid>
           <Grid size={8}>
-            <Item>{item.name}</Item>
+            <Item> Name </Item>
           </Grid>
-          </>
-        ))}
-      </Grid>
-    </Box>
+          {items && items.map((item) => (
+            <>
+            <Grid size={4}>
+              <Item>{item.id}</Item>
+            </Grid>
+            <Grid size={8}>
+              <Item>{item.name}</Item>
+            </Grid>
+            </>
+          ))}
+        </Grid>
+      </Box>
+    </div>
   );
 }
