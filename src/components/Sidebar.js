@@ -1,14 +1,15 @@
-import "../App.css";
+import "../assets/css/App.css";
+import "../assets/css/Logo.css";
 import { Link, useLocation } from "react-router-dom";
 import { SidebarMenus } from "../constants/Menu";
+import Logo from "./Logo";
 
 export default function Sidebar() {
   const location = useLocation();
 
   return (
     <div className="sidebar">
-      <div className="logo">
-      </div>
+      <Logo />
       <div className="menu">
         <ul>
           {SidebarMenus ? SidebarMenus.map(item => {
