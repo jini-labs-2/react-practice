@@ -1,4 +1,5 @@
 import "./App.css";
+import { Link, useLocation } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import Email from '@mui/icons-material/Email';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
@@ -11,6 +12,8 @@ const sidebarItems = [
 ]
 
 export default function Sidebar() {
+  const location = useLocation();
+
   return (
     <div className="sidebar">
       <div className="logo">
@@ -20,12 +23,12 @@ export default function Sidebar() {
           {sidebarItems ? sidebarItems.map(item => {
             return(
               <li key={item.name}
-                className={window.location.pathname === item.link ? "sidebar_active" : ""}
+                className={location.pathname === item.link ? "sidebar_active" : ""}
               >
-                <a href={item.link}>
+                <Link to={item.link}>
                   {item.icon}
                   <span>{item.name}</span>
-                </a>
+                </Link>
               </li>
           )}) : null}
         </ul>
