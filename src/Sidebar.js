@@ -19,7 +19,9 @@ export default function Sidebar() {
         <ul>
           {sidebarItems ? sidebarItems.map(item => {
             return(
-              <li key={item.name}>
+              <li key={item.name}
+                className={window.location.pathname === item.link ? "sidebar_active" : ""}
+              >
                 <a href={item.link}>
                   {item.icon}
                   <span>{item.name}</span>
