@@ -38,7 +38,7 @@ a {
   list-style: none;
 }
 .sidebar ul li {
-  padding: 20px 0px 20px 24px;
+  padding: 10px 0px 10px 24px;
 }
 .sidebar ul li:hover {
   background-color: rgb(230, 230, 230);
