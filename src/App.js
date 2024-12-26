@@ -9,6 +9,8 @@ function App() {
         return current + action.scale;
       case 'DOWN':
         return current - action.scale;
+      case 'RESET':
+        return 0;
       default:
         break;
     }
@@ -21,12 +23,16 @@ function App() {
   function downFn() {
     countDispatch({type:'DOWN', scale: 1})
   }
+  function resetFn() {
+    countDispatch({type:'RESET'})
+  }
 
   return (
     <div className="App">
       <h1>Current count : {count}</h1>
       <button onClick={upFn}>Count UP</button>
       <button onClick={downFn}>Count DOWN</button>
+      <button onClick={resetFn}>Reset Count</button>
     </div>
   );
 }
