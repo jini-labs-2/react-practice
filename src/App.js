@@ -19,10 +19,12 @@ function App() {
 function Sub1() {
   const theme = useContext(themeContext);
   return (
-    <div className="context-test" style={theme}>
-      <h2> sub1 </h2>
-      <Sub2 />
-    </div>
+    <themeContext.Provider value={{border: '3px solid green'}}>
+      <div className="context-test" style={theme}>
+        <h2> sub1 </h2>
+        <Sub2 />
+      </div>
+    </themeContext.Provider>
   )
 }
 
