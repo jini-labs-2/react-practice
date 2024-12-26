@@ -9,10 +9,12 @@ function App() {
   const theme = useContext(themeContext);
   console.log(theme);
   return (
-    <div className="App context-test" style={theme}>
-      <h1>Hellow world</h1>
-      <Sub1 />
-    </div>
+    <themeContext.Provider value={{border: '3px solid blue'}}>
+      <div className="App context-test" style={theme}>
+        <h1>Hellow world</h1>
+        <Sub1 />
+      </div>
+    </themeContext.Provider>
   );
 }
 
