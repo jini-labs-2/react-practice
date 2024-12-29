@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
+import { flexRender, getCoreRowModel, getPaginationRowModel, useReactTable } from '@tanstack/react-table'
 import axios from 'axios'
 const columns = [
   {
@@ -36,6 +36,8 @@ const Todos2 = () => {
     data: todos,
     columns,
     getCoreRowModel: getCoreRowModel(),
+
+    getPaginationRowModel: getPaginationRowModel()
   })
   return (
     <div>
@@ -69,6 +71,26 @@ const Todos2 = () => {
           </tr>
           ))}
         </tbody>
+
+        <div className='pagenation' style={{display: 'flex'}}>
+          <button
+            disabled={!table.getCanPreviousPage()}
+            onClick={() => table.previousPage()}
+          >
+            {'<'}
+          </button>
+          <div className=''>
+            Page {table.getState().pagination.pageIndex + 1}
+            &nbsp;of&nbsp;
+            {table.getPageCount()}
+          </div>
+          <button
+            disabled={!table.getCanNextPage()}
+            onClick={() => table.nextPage()}
+          >
+            {'>'}
+          </button>
+        </div>
       </table>
     </div>
   )
