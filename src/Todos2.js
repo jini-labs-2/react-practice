@@ -25,6 +25,13 @@ const columns = [
   }
 ]
 
+const PAGE_SIZE_OPTIONS = [
+    { value:  10, label:  '10'},
+    { value:  20, label:  '20'},
+    { value:  50, label:  '50'},
+    { value: 100, label: '100'}
+]
+
 const Todos2 = () => {
   const [todos, setTodos] = useState([])
   useEffect(() => {
@@ -73,6 +80,22 @@ const Todos2 = () => {
         </tbody>
 
         <div className='pagenation' style={{display: 'flex'}}>
+
+          <div>
+            <select className=''
+              value={table.getState().pagination.pageSize}
+              onChange={(e) =>
+                table.setPageSize(Number(e.target.value))
+              }
+            >
+              {PAGE_SIZE_OPTIONS.map(({value, label}) => 
+                <option
+                  key={label} value={value}
+                >{label}</option>
+              )}
+            </select>
+          </div>
+
           <button
             disabled={!table.getCanPreviousPage()}
             onClick={() => table.previousPage()}
