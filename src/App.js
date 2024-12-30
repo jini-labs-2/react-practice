@@ -1,18 +1,22 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
+import Users from './Users';
 import Todos from './Todos';
 import Todos2 from './Todos2';
-import Users from './Users';
 
 function App() {
   
+  const queryClient = new QueryClient()
   return (
-    <div className="App">
-      <div className='wrap'>
-        <Users />
-        {/* <Todos /> */}
-        <Todos2 />
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <div className='wrap'>
+          <Todos2 />
+          {/* <Todos /> */}
+          {/* <Users /> */}
+        </div>
       </div>
-    </div>
+    </QueryClientProvider>
   );
 }
 
