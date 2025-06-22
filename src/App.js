@@ -1,25 +1,20 @@
-import './App.css';
-import Sub1 from './components/Sub1';
+import { useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { ServeLangContext } from './context/ServeLangContext';
 import { DEFAULT_SERVE_LANG, DEFAULT_THEME } from './constants';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
-import { useState } from 'react';
+import ContentComponent from './components/ContentComponent';
+import './App.css';
 
 function App() {
+
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <ThemeContext.Provider value={{...DEFAULT_THEME, isDarkMode, setIsDarkMode}}>
       <ServeLangContext.Provider value={DEFAULT_SERVE_LANG}>
         <HeaderComponent />
-
-        <div className="App context-test" style={DEFAULT_THEME}>
-          <h1>Hellow world</h1>
-          <Sub1 />
-          <h2> Service Language is {DEFAULT_SERVE_LANG}</h2>
-        </div>
-
+        <ContentComponent />
         <FooterComponent />
       </ServeLangContext.Provider>
     </ThemeContext.Provider>
