@@ -1,5 +1,14 @@
 export const DEFAULT_SERVE_LANG = 'jp';
-export const DEFAULT_THEME = { 
+export const Theme = { 
   border: '3px solid red',
-  dark_mode: 'false'
+  mode: {
+    dark: {
+      bgColor: '#111',
+      color: '#ddd',
+    },
+    light: {
+      bgColor: '#ddd',
+      color: '#111',
+    }
+  }
 };

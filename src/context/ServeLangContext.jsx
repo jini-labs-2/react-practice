@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { DEFAULT_THEME } from "../constants";
+import { Theme } from "../constants";
 
-export const ServeLangContext = createContext(DEFAULT_THEME);
+export const ServeLangContext = createContext(Theme);
