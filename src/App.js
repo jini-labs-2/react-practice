@@ -5,10 +5,12 @@ import { ServeLangContext } from './context/ServeLangContext';
 import { DEFAULT_SERVE_LANG, DEFAULT_THEME } from './constants';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
+import { useState } from 'react';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <ThemeContext.Provider value={DEFAULT_THEME}>
+    <ThemeContext.Provider value={{...DEFAULT_THEME, isDarkMode, setIsDarkMode}}>
       <ServeLangContext.Provider value={DEFAULT_SERVE_LANG}>
         <HeaderComponent />
 

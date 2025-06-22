@@ -1,5 +1,4 @@
 
-
 export default function FooterComponent() {
   return (
     <div style={{width: '100%', height: '80px', backgroundColor: '#aaa', lineHeight: '80px', textAlign: 'center' }}>
