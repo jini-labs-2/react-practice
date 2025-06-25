@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import useInput from './hooks/useInput';
+import useCounter from './hooks/useCounter';
 
 function displayMessage(message) {
   alert(message)
@@ -9,21 +10,13 @@ function displayMessage(message) {
 function App() {
   const [inputValue, handleChange, handleSubmit] = useInput('別名', displayMessage);
   const [count, setCount] = useState(0);
-  const [testCount, setTestCount] = useState(0);
+  const {testCount, increment, decrement, reset} = useCounter(0);
 
   useEffect(() => {
     document.title = `${count}`
   }, [count])
 
-  const increment = () => {
-    setTestCount(prev => prev + 1);
-  }
-  const decrement = () => {
-    setTestCount(prev => prev - 1);
-  }
-  const reset = () => {
-    setTestCount(0);
-  }
+
 
   return (
     <div className="App">
