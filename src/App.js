@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { ServeLangContext } from './context/ServeLangContext';
+import { MyContext, MyContextValue } from './context/MyContext';
 import { DEFAULT_SERVE_LANG, Theme } from './constants';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
@@ -24,7 +25,9 @@ function App() {
             <AuthButton />
             <AuthDisplay />
           </div>
-          <ContentComponent />
+          <MyContext.Provider value={MyContextValue}>
+            <ContentComponent />
+          </MyContext.Provider>
           <FooterComponent />
         </ServeLangContext.Provider>
       </ThemeContext.Provider>
