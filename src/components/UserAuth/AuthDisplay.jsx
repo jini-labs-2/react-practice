@@ -5,7 +5,7 @@ function AuthDisplay() {
   const auth = useContext(AuthContext);
   return (
     <div>
-      {auth ? 'ログアウト中':'ログイン中'}
+      {auth.userAuth ? 'ログイン中':'ログアウト中'}
     </div>
   )
 }

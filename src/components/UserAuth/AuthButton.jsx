@@ -3,10 +3,13 @@ import { AuthContext } from '../../context/AuthProvider'
 
 function AuthButton() {
   const auth = useContext(AuthContext);
-  console.log('auth -> ', auth);
+
+  const handleLogin = () => {
+    auth.setUserAuth(prev => !auth.userAuth);
+  }
   return (
     <div>
-      <button>{auth ? 'Logout': 'Login'}</button>
+      <button onClick={handleLogin}>{auth.userAuth ? 'Logout': 'Login'}</button>
     </div>
   )
 }
