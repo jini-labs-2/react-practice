@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import './App.css';
+import LoginComponent from './LoginComponent';
 
 function App() {
   // count値の変化でレンダーリングされる。
@@ -30,6 +31,9 @@ function App() {
       <button onClick={incrementCount}> count up </button>
       <button onClick={incrementCountRef}> count Ref up </button>
       <button onClick={incrementCountVal}> count val up </button>
+      <br/>
+      <hr/>
+      <LoginComponent />
     </div>
   );
 }
