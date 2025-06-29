@@ -6,7 +6,6 @@ export default function useFetch(url) {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data);
     });
   },[url])

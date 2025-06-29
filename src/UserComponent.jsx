@@ -20,14 +20,14 @@ export default function UserComponent(props) {
         <tbody>
           {users ? users.map((user) => (
             <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.email}</td>
-                <td>{user.address?.city}</td>
-                <td>{user.phone}</td>
-                <td>{user.website}</td>
-                <td>{user.company?.name}</td>
+                <td style={{textAlign: "left"}}>{user.id}</td>
+                <td style={{textAlign: "left"}}>{user.name}</td>
+                <td style={{textAlign: "left"}}>{user.username}</td>
+                <td style={{textAlign: "left"}}>{user.email}</td>
+                <td style={{textAlign: "left"}}>{user.address?.city}</td>
+                <td style={{textAlign: "left"}}>{user.phone}</td>
+                <td style={{textAlign: "left"}}>{user.website}</td>
+                <td style={{textAlign: "left"}}>{user.company?.name}</td>
             </tr>
           )) : "表示できるデータが有りません。"}
         </tbody>
