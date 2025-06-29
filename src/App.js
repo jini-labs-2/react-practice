@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import './App.css';
 import LoginComponent from './LoginComponent';
+import FormComponent from './FormComponent';
 
 function App() {
   // count値の変化でレンダーリングされる。
@@ -34,6 +35,8 @@ function App() {
       <br/>
       <hr/>
       <LoginComponent />
+      <hr/>
+      <FormComponent />
     </div>
   );
 }
