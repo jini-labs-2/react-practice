@@ -10,6 +10,8 @@ export default function FormComponent() {
     e.preventDefault();
     //console.log({ email, password })
     console.log(emailRef.current.value, passwordRef.current.value);
+    emailRef.current.style.background = 'green';
+    emailRef.current.style.height = '100px';
 
   }
   return (
