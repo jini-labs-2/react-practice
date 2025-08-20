@@ -1,9 +1,16 @@
 import './App.css';
+import { CartProvider } from './CartContext';
+import Cart from './components/Cart';
+import Header from './components/Header';
+import Products from './components/Products';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <CartProvider>
+      <Header />
+      <Products />
+      <Cart />
+    </CartProvider>
   );
 }
 
